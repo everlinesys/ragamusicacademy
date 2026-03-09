@@ -20,6 +20,10 @@ export default function CourseDetails() {
 
   useEffect(() => {
     async function load() {
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+      });
       try {
         const courseRes = await api.get(`/courses/${courseId}`);
         const unitsRes = await api.get(`/units?courseId=${courseId}`);
