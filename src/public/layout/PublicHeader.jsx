@@ -7,11 +7,11 @@ export default function PublicHeader() {
   const brand = useBranding();
   return (
     <header className="bg-white border-b shadow-sm">
-      <div className="max-w-7xl mx-auto px-3 h-16 flex items-center justify-between">
+      <div className="max-w-7xl mx-auto px-3 md:px-6 h-16 flex items-center justify-between">
 
         {/* Logo */}
         <Link to="/" className="text-xl font-bold text-gray-900"
-        style={{fontWeight:"bold"}}>
+          style={{ fontWeight: "bold", color: brand.primaryColor }}>
           {brand.siteName?.toUpperCase() || "ELearn"}
         </Link>
 
@@ -31,7 +31,7 @@ export default function PublicHeader() {
               <Link
                 to="/register"
                 className=" text-white px-4 py-2 rounded-lg"
-                style={{background:brand.colors.primary , color:brand.colors.accent}}
+                style={{ background: brand.colors.primary, color: brand.colors.accent }}
               >
                 Get Started
               </Link>

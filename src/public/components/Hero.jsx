@@ -63,7 +63,7 @@ export default function Hero() {
           <div className={`inline-flex items-center gap-2 px-3 py-1 ${brand.theme.layout.panel} ${brand.theme.shape?.radius || ""}`}>
             <span className="relative flex h-2 w-2">
               <span
-                className="animate-ping absolute inline-flex h-full w-full rounded-full opacity-75"
+                className="animate-ping  absolute inline-flex h-full w-full rounded-full opacity-75"
                 style={{ backgroundColor: brand.colors.primary }}
               />
               <span
@@ -97,7 +97,7 @@ export default function Hero() {
             <a
               href="#courses"
               className={`group inline-flex items-center justify-center px-8 py-4 font-black text-sm tracking-wide transition-all duration-300 active:scale-95 ${brand.theme.button.primary} ${brand.theme.shape?.radius || ""}`}
-              style={{ color: brand.colors.accent }}
+              style={{ color: brand.colors.accent , background : brand.primaryColor}}
             >
               <span className="flex items-center gap-2" >
                 Browse Courses

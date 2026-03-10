@@ -15,7 +15,7 @@ export default function PreviewVideo() {
     brand.hero?.poster;
 
   return (
-    <section className="relative overflow-hidden bg-white">
+    <section className="relative overflow-hidden bg-white md:px-16">
       <div className="relative z-10 grid lg:grid-cols-2 gap-8 items-center">
 
         {/* 🎥 VIDEO — CLEAN */}

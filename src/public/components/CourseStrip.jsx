@@ -32,7 +32,7 @@ export default function FeaturedCoursesStrip() {
         <section className="bg-white py-6 overflow-hidden"
         >
 
-            <div className="max-w-screen mx-auto px-6 py-6 " style={{ backgroundColor: brand.colors.primary }}>
+            <div className="max-w-screen mx-auto px-6 py-6 md:px-16 " style={{ backgroundColor: brand.colors.primary }}>
 
                 {/* Header */}
                 <div className="flex items-center justify-between mb-6 text-white">
