@@ -7,7 +7,7 @@ export default function PublicHeader() {
   const brand = useBranding();
   return (
     <header className="bg-white border-b shadow-sm">
-      <div className="max-w-7xl mx-auto px-3 md:px-6 h-16 flex items-center justify-between">
+      <div className="max-w-7xl mx-auto p-3 md:px-6 md:h-16 flex items-center justify-between">
 
         {/* Logo */}
         <Link to="/" className="text-xl font-bold text-gray-900"

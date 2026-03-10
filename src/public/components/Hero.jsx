@@ -36,10 +36,10 @@ export default function Hero() {
         style={{ backgroundColor: brand.colors.primary }}
       ></div> */}
 
-      <div className="relative z-10 grid md:grid-cols-2 gap-12 items-center p-8 md:p-16">
+      <div className="relative z-10 grid md:grid-cols-2 gap-12 items-center py-8 md:p-16">
 
         {/* LEFT */}
-        <div className="space-y-6 text-center md:text-left">
+        <div className="space-y-6 text-center md:text-left ">
 
           {/* Image top mobile only */}
           <div className="relative md:hidden md:block group ">
@@ -79,7 +79,7 @@ export default function Hero() {
 
           {/* Title */}
           <h1
-            className="text-4xl md:text-5xl font-bold leading-[1.1] tracking-tight"
+            className="text-4xl md:text-5xl font-bold leading-[1.1] tracking-tight px-3 md:px-0"
             style={{ color: brand.colors.primary }}
           >
             {brand.hero?.title || "Welcome to eLearn"}
