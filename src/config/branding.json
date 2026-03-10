@@ -1,76 +1,77 @@
 {
   "default": {
-    "siteName": "Axiom Learning",
-    "tagline": "Concept-Driven Learning for Competitive Exams",
+    "siteName": "Raga Music Academy",
+    "tagline": "Learn Music with Passion and Precision",
 
-    "primaryColor": "#24b04b",
-    "theme": "formalLight",
+    "primaryColor": "#e63ba9",
+    "theme": "softSaaSMarketing",
 
-    "logo": "/axiomlearning-logo.png",
-    "students": "10K",
+    "logo": "/ragaacademy-logo.png",
+    "students": "2K",
 
     "colors": {
-      "primary": "#24b04b",
+      "primary": "#e63ba9",
       "accent": "white"
     },
 
     "hero": {
-      "title": "Crack NEET, JEE, KEAM Entrance Exams",
-      "subtitle": "Structured preparation for JEE, NEET, KEAM and other entrance exams with concept-focused teaching and real exam strategies.",
+      "title": "Live Music Class for Everyone",
+      "subtitle": "Professional training in vocal and instrumental music for beginners, enthusiasts, and aspiring performers.",
+
       "image": "/hero.png",
 
       "bunnyVideoId": "231392af-8a40-4586-9879-897d3f02b853",
-      "poster": "/science-hero.png"
+      "poster": "/music-hero.png"
     },
 
     "preview": {
-      "badge": "Trusted Entrance Coaching",
-      "title": "Concept-Based Learning",
-      "highlight": "Built for Top Ranks.",
-      "description": "Comprehensive courses covering Physics, Chemistry, and Mathematics/Biology with problem-solving strategies, mock tests, and mentor guidance.",
+      "badge": "Trusted Music Training",
+      "title": "Structured Music Learning",
+      "highlight": "From Basics to Performance.",
+      "description": "Learn classical and contemporary music with structured lessons, practice exercises, and guidance from experienced musicians.",
 
       "bunnyVideoId": "231392af-8a40-4586-9879-897d3f02b853",
 
       "libraryId": "594138",
 
-      "poster": "/science-hero.png",
+      "poster": "/music-hero.png",
 
       "videoUrl": "https://youtu.be/8nOOE8ZAzqU?si=YyWEkz_gvDEUAK6E",
 
       "perks": [
-        { "value": "CONCEPT", "label": "Deep Concept Clarity" },
-        { "value": "TESTS", "label": "Regular Mock Exams" }
+        { "value": "VOCAL", "label": "Vocal Training" },
+        { "value": "INSTRUMENT", "label": "Instrument Lessons" }
       ]
     },
 
     "reviews": [
       {
-        "name": "Aditya Nair",
-        "role": "JEE Aspirant",
+        "name": "Arjun Menon",
+        "role": "Vocal Student",
         "rating": 5,
-        "text": "The concept explanations are incredibly clear. The physics modules helped me solve advanced problems easily."
+        "text": "The classes helped me understand ragas and improve my singing technique."
       },
       {
-        "name": "Anjali Menon",
-        "role": "NEET Student",
+        "name": "Meera Nair",
+        "role": "Keyboard Student",
         "rating": 5,
-        "text": "The biology and chemistry classes are structured perfectly for NEET preparation."
+        "text": "The lessons are very structured and easy to follow even for beginners."
       },
       {
-        "name": "Rahul Joseph",
-        "role": "KEAM Rank Holder",
+        "name": "Rahul Krishnan",
+        "role": "Guitar Student",
         "rating": 4,
-        "text": "The mock tests and problem-solving sessions made a huge difference in my preparation."
+        "text": "Great mentors and clear explanations. My playing has improved a lot."
       }
     ],
 
     "contact": {
-      "email": "support@axiomlearning.in",
+      "email": "support@ragaacademy.in",
       "phone": "+91 9400 690 911",
       "whatsapp": "+91 9400 690 911",
       "address": "Kochi, Kerala, India",
       "supportName": "Student Support Team",
-      "image": "/science-hero.png"
+      "image": "/music-hero.png"
     }
   }
 }
