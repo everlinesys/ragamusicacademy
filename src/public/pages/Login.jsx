@@ -30,7 +30,7 @@ export default function Login() {
   };
 
   return (
-    <div className="min-w-screen mx-auto py-20 space-y-6 px-10 bg-gray-100 text-black">
+    <div className="min-w-screen mx-auto py-20 space-y-6 md:px-10 bg-gray-100 text-black">
       <div className="max-w-md mx-auto py-20 space-y-6 px-10 bg-white rounded-lg shadow-lg text-black">
         <h2 className="text-2xl font-semibold text-center">Login to {brand.siteName}</h2>
 
@@ -53,7 +53,7 @@ export default function Login() {
         <button
           onClick={handleLogin}
           className={`w-full py-2  text-white rounded-lg  ${brand.theme.button.primary} ${brand.theme.shape?.radius || ""}`}
-          style={{ transition: "background-color 0.3s ease" }} >
+          style={{ transition: "background-color 0.3s ease" , background: brand.primary }} >
           Login
         </button>
 

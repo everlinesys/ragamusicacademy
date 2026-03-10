@@ -51,8 +51,8 @@ export default function Register() {
   };
 
   return (
-    <div className="min-w-screen text-black mx-auto py-20 px-10 bg-gray-100">
-      <div className="max-w-md mx-auto px-6 ">
+    <div className="min-w-screen text-black mx-auto py-20 md:px-10 bg-gray-100">
+      <div className="md:max-w-md mx-auto md:px-6 ">
         <div className="bg-white  rounded-xl p-8 space-y-6 shadow-sm ">
 
           <div>
