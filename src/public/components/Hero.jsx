@@ -36,7 +36,7 @@ export default function Hero() {
         style={{ backgroundColor: brand.colors.primary }}
       ></div> */}
 
-      <div className="relative z-10 grid md:grid-cols-2 gap-12 items-center py-8 md:p-16">
+      <div className="relative z-10 grid md:grid-cols-2 gap-12 items-center pb-8 md:p-16">
 
         {/* LEFT */}
         <div className="space-y-6 text-center md:text-left ">
@@ -152,12 +152,12 @@ export default function Hero() {
         </div>
 
       </div>
-      <div className="fixed bottom-6 right-6 z-50">
+      <div className="fixed bottom-2 right-2 z-50">
 
         {/* Expanded Chat Box */}
         {open && (
           <div
-            className="w-72 rounded-2xl shadow-2xl overflow-hidden mb-3"
+            className="w-72 max-w-[90vw] rounded-2xl shadow-2xl overflow-hidden mb-3"
             style={{ backgroundColor: "white" }}
           >
             {/* Header */}

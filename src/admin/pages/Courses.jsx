@@ -204,8 +204,8 @@ export default function Courses() {
               <div className="grid grid-cols-2 gap-3 pt-2">
                 <button
                   onClick={() => navigate(`/admin/courses/${active.id}`)}
-                  className="flex items-center justify-center gap-2 py-4 rounded-2xl bg-slate-50 text-[12px] font-bold text-slate-700 hover:bg-slate-100 transition-all"
-                >
+                  className="flex items-center justify-center gap-2 py-4 rounded-2xl  text-[12px] font-bold  hover:bg-slate-100 transition-all"
+                  style={{ color: "black" }} >
                   <Edit3 size={14} />
                   Edit Details
                 </button>

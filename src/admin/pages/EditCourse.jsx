@@ -6,6 +6,8 @@ export default function EditCourse() {
   const { id } = useParams();
   const navigate = useNavigate();
 
+  const isNew = id === "new";
+
   const [form, setForm] = useState({
     title: "",
     description: "",
@@ -20,21 +22,27 @@ export default function EditCourse() {
 
   // ================= LOAD COURSE =================
   useEffect(() => {
-    async function load() {
-      const { data } = await api.get(`/courses/${id}`);
+    if (isNew) return;
 
-      setForm({
-        title: data.title || "",
-        description: data.description || "",
-        price: data.price ?? "",
-        oldPrice: data.oldPrice ?? "",
-        thumbnail: data.thumbnail || "",
-        introBunnyVideoId: data.introBunnyVideoId || "",
-      });
+    async function load() {
+      try {
+        const { data } = await api.get(`/courses/${id}`);
+
+        setForm({
+          title: data.title || "",
+          description: data.description || "",
+          price: data.price ?? "",
+          oldPrice: data.oldPrice ?? "",
+          thumbnail: data.thumbnail || "",
+          introBunnyVideoId: data.introBunnyVideoId || "",
+        });
+      } catch (err) {
+        console.error(err);
+      }
     }
 
     load();
-  }, [id]);
+  }, [id, isNew]);
 
   // ================= THUMBNAIL =================
   async function uploadThumbnail(file) {
@@ -45,11 +53,16 @@ export default function EditCourse() {
 
     setUploading(true);
 
-    const res = await api.post("/uploads/course-thumbnail", fd, {
-      headers: { "Content-Type": "multipart/form-data" },
-    });
+    try {
+      const res = await api.post("/uploads/course-thumbnail", fd, {
+        headers: { "Content-Type": "multipart/form-data" },
+      });
 
-    setForm((p) => ({ ...p, thumbnail: res.data.url }));
+      setForm((p) => ({ ...p, thumbnail: res.data.url }));
+    } catch (err) {
+      console.error(err);
+    }
+
     setUploading(false);
   }
 
@@ -60,39 +73,43 @@ export default function EditCourse() {
     setUploading(true);
     setProgress(0);
 
-    const { data } = await api.post(
-      "/admin/bunny/create-video-simple",
-      { title: file.name }
-    );
+    try {
+      const { data } = await api.post(
+        "/admin/bunny/create-video-simple",
+        { title: file.name }
+      );
 
-    const { videoId, uploadUrl } = data;
+      const { videoId, uploadUrl } = data;
 
-    const xhr = new XMLHttpRequest();
-    xhr.open("PUT", uploadUrl);
+      const xhr = new XMLHttpRequest();
+      xhr.open("PUT", uploadUrl);
 
-    xhr.upload.onprogress = (e) => {
-      if (e.lengthComputable) {
-        setProgress(Math.floor((e.loaded / e.total) * 100));
-      }
-    };
+      xhr.upload.onprogress = (e) => {
+        if (e.lengthComputable) {
+          setProgress(Math.floor((e.loaded / e.total) * 100));
+        }
+      };
 
-    xhr.onload = () => {
+      xhr.onload = () => {
+        setUploading(false);
+
+        setForm((p) => ({
+          ...p,
+          introBunnyVideoId: videoId,
+        }));
+      };
+
+      xhr.send(file);
+    } catch (err) {
+      console.error(err);
       setUploading(false);
-
-      setForm((p) => ({
-        ...p,
-        introBunnyVideoId: videoId,
-      }));
-    };
-
-    xhr.send(file);
+    }
   }
 
   // ================= SAVE =================
   async function save(e) {
     e.preventDefault();
 
-    // 🔥 VALIDATION
     if (!form.title || !form.description) {
       alert("Title & description required");
       return;
@@ -103,21 +120,32 @@ export default function EditCourse() {
       return;
     }
 
-    // ⭐ CONVERT TYPES FOR PRISMA
     const payload = {
       ...form,
       price: Number(form.price),
       oldPrice: form.oldPrice ? Number(form.oldPrice) : null,
     };
 
-    await api.put(`/courses/${id}`, payload);
+    try {
+      if (isNew) {
+        await api.post("/courses", payload);
+      } else {
+        await api.put(`/courses/${id}`, payload);
+      }
 
-    navigate("/admin/courses");
+      navigate("/admin/courses");
+    } catch (err) {
+      console.error(err);
+      alert("Failed to save course");
+    }
   }
 
   return (
-    <div className="max-w-3xl mx-auto space-y-8 px-2">
-      <h2 className="text-2xl font-semibold">Course Control</h2>
+    <div className="max-w-3xl mx-auto space-y-8 px-2 py-10">
+
+      <h2 className="text-2xl font-semibold">
+        {isNew ? "Create Course" : "Edit Course"}
+      </h2>
 
       <form onSubmit={save} className="space-y-6">
 
@@ -215,7 +243,7 @@ export default function EditCourse() {
 
         {/* SAVE */}
         <button className="px-6 py-3 bg-black text-white rounded-lg">
-          Save Changes
+          {isNew ? "Create Course" : "Save Changes"}
         </button>
 
       </form>

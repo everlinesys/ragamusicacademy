@@ -44,8 +44,8 @@
 
   "softSaaSMarketing": {
     "layout": {
-      "page": "bg-[#7F8B87]",
-      "container": "bg-[#EEF4F1] text-[#1F2933]",
+      "page": "bg-[#1b041b]",
+      "container": "bg-[#1b041b] text-[#3f3f3f]",
       "panel": "bg-white shadow-sm border border-[#E6ECE9]",
       "header": "bg-white/80 backdrop-blur border border-[#E6ECE9]",
       "footer": "bg-white border-t border-[#E6ECE9]"
@@ -59,16 +59,16 @@
     },
 
     "text": {
-      "title": "font-semibold tracking-tight text-[#1F2933]",
-      "subtitle": "text-[#4B5563] font-medium",
+      "title": "font-semibold tracking-tight text-[#3f3f3f]",
+      "subtitle": "text-[#3f3f3f] font-medium",
       "body": "text-[#6B7280]",
       "label": "text-[#6B7280] text-xs font-semibold"
     },
 
     "button": {
-      "primary": "bg-[#1F2933] text-white hover:bg-black shadow-sm",
-      "secondary": "bg-white border border-[#E6ECE9] text-[#1F2933] hover:bg-[#F7FAF9]",
-      "accent": "bg-[#2E9C87] text-white hover:bg-[#238B77]"
+      "primary": "bg-[#3f3f3f] text-white hover:bg-black shadow-sm",
+      "secondary": "bg-white border border-[#E6ECE9] text-[#3f3f3f] hover:bg-[#F7FAF9]",
+      "accent": "bg-[#3f3f3f] text-white hover:bg-[#238B77]"
     },
 
     "input": {
